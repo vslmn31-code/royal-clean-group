@@ -1,113 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Royal Clean Group</title>
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial,sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Clean Group</title>
 
-    body{
-      background:linear-gradient(135deg,#08111f,#102b4c);
-      color:white;
-    }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-    nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:25px 80px;
-      background:rgba(0,0,0,0.35);
-      backdrop-filter:blur(10px);
-    }
+html{
+    scroll-behavior:smooth;
+}
 
-    .logo{
-      font-size:32px;
-      font-weight:bold;
-      color:#d4a017;
-    }
+body{
+    background:#08111f;
+    color:white;
+}
 
-    .menu a{
-      color:white;
-      text-decoration:none;
-      margin-left:30px;
-      font-size:18px;
-    }
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 80px;
+    background:rgba(7,12,22,.85);
+    backdrop-filter:blur(14px);
+    z-index:999;
+}
 
-    .hero{
-      min-height:90vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:40px;
-      background:
-      radial-gradient(circle at right,#4fcbff55,transparent 30%);
-    }
+.logo{
+    color:#d4a017;
+    font-size:30px;
+    font-weight:800;
+}
 
-    .hero-box{
-      max-width:900px;
-    }
+.menu a{
+    color:white;
+    text-decoration:none;
+    margin-left:30px;
+    font-size:17px;
+}
 
-    h1{
-      font-size:72px;
-      margin-bottom:20px;
-    }
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+    linear-gradient(rgba(5,10,18,.72), rgba(5,10,18,.82)),
+    url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1920&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    padding:40px;
+}
 
-    h1 span{
-      color:#d4a017;
-    }
+.hero-box{
+    max-width:1000px;
+}
 
-    p{
-      font-size:24px;
-      color:#d6e7ff;
-      margin-bottom:30px;
-    }
+.hero h1{
+    font-size:82px;
+    font-weight:900;
+    text-shadow:0 0 25px rgba(79,203,255,.25);
+}
 
-    .btn{
-      display:inline-block;
-      margin:10px;
-      padding:18px 35px;
-      border-radius:50px;
-      text-decoration:none;
-      font-weight:bold;
-    }
+.gold{
+    color:#d4a017;
+}
 
-    .gold{
-      background:#d4a017;
-      color:black;
-    }
+.hero p{
+    margin-top:20px;
+    font-size:28px;
+    color:#d9e8ff;
+}
 
-    .blue{
-      background:#4fcbff;
-      color:black;
-    }
-  </style>
+.buttons{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+    margin:10px;
+    padding:18px 38px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn-gold{
+    background:#d4a017;
+    color:black;
+}
+
+.btn-blue{
+    background:#4fcbff;
+    color:black;
+}
+
+.services{
+    padding:100px 60px;
+    background:#0c1829;
+}
+
+.section-title{
+    text-align:center;
+    font-size:48px;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#13253d;
+    border:1px solid rgba(79,203,255,.2);
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.card h3{
+    margin-top:15px;
+    color:#d4a017;
+}
+</style>
 </head>
 <body>
 
 <nav>
-  <div class="logo">ROYAL CLEAN GROUP</div>
-  <div class="menu">
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </div>
+    <div class="logo">ROYAL CLEAN GROUP</div>
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
 </nav>
 
 <section class="hero">
-  <div class="hero-box">
-    <h1>ROYAL <span>CLEAN GROUP</span></h1>
-    <p>Professional Cleaning with Premium Results</p>
-    <a class="btn gold" href="#">Call Now</a>
-    <a class="btn blue" href="#">WhatsApp</a>
-  </div>
+    <div class="hero-box">
+        <h1>ROYAL <span class="gold">CLEAN GROUP</span></h1>
+        <p>Professional Cleaning With Premium Results</p>
+
+        <div class="buttons">
+            <a class="btn btn-gold" href="tel:+38970393808">Call Now</a>
+            <a class="btn btn-blue" href="https://wa.me/38970393808">WhatsApp</a>
+        </div>
+    </div>
+</section>
+
+<section class="services">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="cards">
+        <div class="card"><h3>Homes</h3></div>
+        <div class="card"><h3>Buildings</h3></div>
+        <div class="card"><h3>Vehicles</h3></div>
+        <div class="card"><h3>Deep Cleaning</h3></div>
+    </div>
 </section>
 
 </body>
