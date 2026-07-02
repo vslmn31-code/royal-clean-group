@@ -1,174 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mk">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Royal Clean Group</title>
-
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#08111f;
-    color:white;
-}
-
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:22px 80px;
-    background:rgba(7,12,22,.85);
-    backdrop-filter:blur(14px);
-    z-index:999;
-}
-
-.logo{
-    color:#d4a017;
-    font-size:30px;
-    font-weight:800;
-}
-
-.menu a{
-    color:white;
-    text-decoration:none;
-    margin-left:30px;
-    font-size:17px;
-}
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:
-    linear-gradient(rgba(5,10,18,.72), rgba(5,10,18,.82)),
-    url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1920&auto=format&fit=crop');
-    background-size:cover;
-    background-position:center;
-    padding:40px;
-}
-
-.hero-box{
-    max-width:1000px;
-}
-
-.hero h1{
-    font-size:82px;
-    font-weight:900;
-    text-shadow:0 0 25px rgba(79,203,255,.25);
-}
-
-.gold{
-    color:#d4a017;
-}
-
-.hero p{
-    margin-top:20px;
-    font-size:28px;
-    color:#d9e8ff;
-}
-
-.buttons{
-    margin-top:35px;
-}
-
-.btn{
-    display:inline-block;
-    margin:10px;
-    padding:18px 38px;
-    border-radius:40px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.btn-gold{
-    background:#d4a017;
-    color:black;
-}
-
-.btn-blue{
-    background:#4fcbff;
-    color:black;
-}
-
-.services{
-    padding:100px 60px;
-    background:#0c1829;
-}
-
-.section-title{
-    text-align:center;
-    font-size:48px;
-    margin-bottom:50px;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:#13253d;
-    border:1px solid rgba(79,203,255,.2);
-    padding:35px;
-    border-radius:20px;
-    text-align:center;
-}
-
-.card h3{
-    margin-top:15px;
-    color:#d4a017;
-}
+/* PART 2 gelecek buraya */
 </style>
 </head>
 <body>
 
-<nav>
-    <div class="logo">ROYAL CLEAN GROUP</div>
-    <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+<nav class="navbar">
+    <div class="logo-wrap">
+        <img src="https://i.imgur.com/6QJjQ0M.png" id="logo" alt="Royal Logo">
+        <span>ROYAL CLEAN GROUP</span>
+    </div>
+
+    <div class="nav-center">
+        <a href="#home" data-mk="Почетна" data-al="Ballina" data-en="Home">Почетна</a>
+        <a href="#services" data-mk="Услуги" data-al="Shërbime" data-en="Services">Услуги</a>
+        <a href="#about" data-mk="За нас" data-al="Rreth nesh" data-en="About">За нас</a>
+        <a href="#gallery" data-mk="Галерија" data-al="Galeri" data-en="Gallery">Галерија</a>
+        <a href="#contact" data-mk="Контакт" data-al="Kontakt" data-en="Contact">Контакт</a>
+    </div>
+
+    <div class="right-controls">
+        <div class="lang-switch">
+            <button onclick="setLang('mk')">MK</button>
+            <button onclick="setLang('al')">AL</button>
+            <button onclick="setLang('en')">EN</button>
+        </div>
+
+        <a class="phone-btn" href="tel:+38970393808">070 393 808</a>
     </div>
 </nav>
 
-<section class="hero">
-    <div class="hero-box">
-        <h1>ROYAL <span class="gold">CLEAN GROUP</span></h1>
-        <p>Professional Cleaning With Premium Results</p>
+<section id="home" class="hero">
+    <div class="hero-overlay"></div>
 
-        <div class="buttons">
-            <a class="btn btn-gold" href="tel:+38970393808">Call Now</a>
-            <a class="btn btn-blue" href="https://wa.me/38970393808">WhatsApp</a>
+    <div class="hero-left">
+        <h1 data-mk="ПРОФЕСИОНАЛНО ЧИСТЕЊЕ"
+            data-al="PASTRIM PROFESIONAL"
+            data-en="PROFESSIONAL CLEANING">
+            ПРОФЕСИОНАЛНО ЧИСТЕЊЕ
+        </h1>
+
+        <p data-mk="Со гаранција за квалитет"
+           data-al="Me garanci për cilësi"
+           data-en="With guaranteed quality">
+           Со гаранција за квалитет
+        </p>
+
+        <ul>
+            <li data-mk="Професионален тим 24/7" data-al="Ekip profesional 24/7" data-en="Professional team 24/7">✔ Професионален тим 24/7</li>
+            <li data-mk="Детално и прецизно" data-al="Detajisht dhe preciz" data-en="Detailed and precise">✔ Детално и прецизно</li>
+            <li data-mk="Гаранција за квалитет" data-al="Garanci për cilësi" data-en="Quality guarantee">✔ Гаранција за квалитет</li>
+        </ul>
+
+        <div class="hero-buttons">
+            <a class="gold-btn" href="#contact">Get Offer</a>
+            <a class="blue-btn" href="https://wa.me/38970393808">WhatsApp</a>
         </div>
     </div>
 </section>
 
-<section class="services">
-    <h2 class="section-title">Our Services</h2>
+<section id="services" class="services">
+    <h2>OUR SERVICES</h2>
 
-    <div class="cards">
-        <div class="card"><h3>Homes</h3></div>
-        <div class="card"><h3>Buildings</h3></div>
-        <div class="card"><h3>Vehicles</h3></div>
-        <div class="card"><h3>Deep Cleaning</h3></div>
+    <div class="service-grid">
+        <div class="service-card">🏠 Homes</div>
+        <div class="service-card">🏢 Buildings</div>
+        <div class="service-card">🚗 Vehicles</div>
+        <div class="service-card">🪟 Windows</div>
+        <div class="service-card">🛋 Furniture</div>
+        <div class="service-card">🧼 Deep Cleaning</div>
     </div>
 </section>
 
+<section id="contact" class="contact">
+    <h2>ROYAL CLEAN GROUP</h2>
+    <p>070 393 808</p>
+</section>
+
+<div class="whatsapp-float">
+    <a href="https://wa.me/38970393808">WhatsApp</a>
+</div>
+
+<script>
+/* PART 3 gelecek buraya */
+</script>
+<script>
+let currentLang = "en";
+
+const translations = {
+  mk: {
+    home: "Почетна",
+    services: "Услуги",
+    contact: "Контакт",
+    title: "ПРОФЕСИОНАЛНО ЧИСТЕЊЕ",
+    subtitle: "Со гаранција за квалитет",
+    offer: "Понуда",
+    serviceTitle: "НАШИ УСЛУГИ",
+    contactTitle: "КОНТАКТ"
+  },
+  al: {
+    home: "Ballina",
+    services: "Shërbime",
+    contact: "Kontakt",
+    title: "PASTRIM PROFESIONAL",
+    subtitle: "Me garanci për cilësi",
+    offer: "Ofertë",
+    serviceTitle: "SHËRBIMET TONA",
+    contactTitle: "KONTAKT"
+  },
+  en: {
+    home: "Home",
+    services: "Services",
+    contact: "Contact",
+    title: "PROFESSIONAL CLEANING",
+    subtitle: "With Guaranteed Quality",
+    offer: "Get Offer",
+    serviceTitle: "OUR SERVICES",
+    contactTitle: "CONTACT"
+  }
+};
+
+function setLang(lang){
+  currentLang = lang;
+  const t = translations[lang];
+
+  document.querySelectorAll(".nav-center a")[0].innerText = t.home;
+  document.querySelectorAll(".nav-center a")[1].innerText = t.services;
+  document.querySelectorAll(".nav-center a")[2].innerText = t.contact;
+
+  document.querySelector(".hero h1").innerText = t.title;
+  document.querySelector(".hero p").innerText = t.subtitle;
+  document.querySelector(".gold-btn").innerText = t.offer;
+  document.querySelector(".services h2").innerText = t.serviceTitle;
+  document.querySelector(".contact h2").innerText = t.contactTitle;
+}
+</script>
 </body>
 </html>
