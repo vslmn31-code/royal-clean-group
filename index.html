@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mk">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,168 +7,307 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#08111f;
-    color:white;
+background:#07111f;
+color:white;
 }
 
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:22px 80px;
-    background:rgba(7,12,22,.85);
-    backdrop-filter:blur(14px);
-    z-index:999;
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 50px;
+background:rgba(6,12,25,.85);
+backdrop-filter:blur(14px);
+z-index:999;
+border-bottom:1px solid rgba(79,203,255,.18);
 }
 
-.logo{
-    color:#d4a017;
-    font-size:30px;
-    font-weight:800;
+.logo-wrap{
+display:flex;
+align-items:center;
+gap:15px;
+font-weight:800;
+color:#d4a017;
 }
 
-.menu a{
-    color:white;
-    text-decoration:none;
-    margin-left:30px;
-    font-size:17px;
+#logo{
+width:54px;
+height:54px;
+object-fit:contain;
+}
+
+.nav-center a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-size:15px;
+}
+
+.right-controls{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.lang-switch button{
+background:none;
+border:none;
+color:white;
+margin:0 3px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.phone-btn{
+background:linear-gradient(90deg,#d4a017,#f5c95b);
+color:black;
+padding:12px 24px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
 }
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:
-    linear-gradient(rgba(5,10,18,.72), rgba(5,10,18,.82)),
-    url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1920&auto=format&fit=crop');
-    background-size:cover;
-    background-position:center;
-    padding:40px;
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:140px 8%;
+position:relative;
+background:
+linear-gradient(rgba(4,10,20,.55),rgba(4,10,20,.88)),
+url('https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=1920&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
 }
 
-.hero-box{
-    max-width:1000px;
+.hero-overlay{
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 70% 40%,rgba(79,203,255,.30),transparent 28%);
+}
+
+.hero-left{
+position:relative;
+z-index:2;
+max-width:700px;
 }
 
 .hero h1{
-    font-size:82px;
-    font-weight:900;
-    text-shadow:0 0 25px rgba(79,203,255,.25);
-}
-
-.gold{
-    color:#d4a017;
+font-size:72px;
+font-weight:900;
+line-height:1.05;
+text-shadow:0 0 24px rgba(79,203,255,.25);
 }
 
 .hero p{
-    margin-top:20px;
-    font-size:28px;
-    color:#d9e8ff;
+font-size:30px;
+color:#7bd7ff;
+margin:18px 0 22px;
 }
 
-.buttons{
-    margin-top:35px;
+.hero ul{
+list-style:none;
+margin-bottom:35px;
 }
 
-.btn{
-    display:inline-block;
-    margin:10px;
-    padding:18px 38px;
-    border-radius:40px;
-    text-decoration:none;
-    font-weight:bold;
+.hero li{
+margin:14px 0;
+font-size:20px;
 }
 
-.btn-gold{
-    background:#d4a017;
-    color:black;
+.hero-buttons{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
 }
 
-.btn-blue{
-    background:#4fcbff;
-    color:black;
+.gold-btn,.blue-btn{
+padding:18px 34px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.gold-btn{
+background:#d4a017;
+color:black;
+}
+
+.blue-btn{
+background:#4fcbff;
+color:black;
 }
 
 .services{
-    padding:100px 60px;
-    background:#0c1829;
+padding:100px 70px;
+background:#0b1628;
 }
 
-.section-title{
-    text-align:center;
-    font-size:48px;
-    margin-bottom:50px;
+.services h2{
+text-align:center;
+font-size:48px;
+margin-bottom:50px;
+color:#d4a017;
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:24px;
 }
 
-.card{
-    background:#13253d;
-    border:1px solid rgba(79,203,255,.2);
-    padding:35px;
-    border-radius:20px;
-    text-align:center;
+.service-card{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(79,203,255,.25);
+padding:45px 25px;
+border-radius:22px;
+text-align:center;
+font-size:24px;
+backdrop-filter:blur(8px);
+transition:.3s;
 }
 
-.card h3{
-    margin-top:15px;
-    color:#d4a017;
+.service-card:hover{
+transform:translateY(-8px);
+border-color:#4fcbff;
+box-shadow:0 0 30px rgba(79,203,255,.2);
+}
+
+.contact{
+padding:80px 20px;
+text-align:center;
+background:#08111f;
+}
+
+.contact h2{
+color:#d4a017;
+font-size:42px;
+margin-bottom:15px;
+}
+
+.contact p{
+font-size:28px;
+}
+
+.whatsapp-float{
+position:fixed;
+right:24px;
+bottom:24px;
+z-index:999;
+}
+
+.whatsapp-float a{
+display:block;
+background:#25D366;
+color:white;
+padding:18px 24px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+
+@media(max-width:1100px){
+.nav-center{
+display:none;
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.hero p{
+font-size:22px;
+}
 }
 </style>
 </head>
+
 <body>
 
-<nav>
-    <div class="logo">ROYAL CLEAN GROUP</div>
-    <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-    </div>
+<nav class="navbar">
+<div class="logo-wrap">
+<img src="https://i.imgur.com/6QJjQ0M.png" id="logo">
+<span>ROYAL CLEAN GROUP</span>
+</div>
+
+<div class="nav-center">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div class="right-controls">
+<div class="lang-switch">
+<button>MK</button>
+<button>AL</button>
+<button>EN</button>
+</div>
+
+<a class="phone-btn" href="tel:+38970393808">070 393 808</a>
+</div>
 </nav>
 
-<section class="hero">
-    <div class="hero-box">
-        <h1>ROYAL <span class="gold">CLEAN GROUP</span></h1>
-        <p>Professional Cleaning With Premium Results</p>
+<section id="home" class="hero">
+<div class="hero-overlay"></div>
 
-        <div class="buttons">
-            <a class="btn btn-gold" href="tel:+38970393808">Call Now</a>
-            <a class="btn btn-blue" href="https://wa.me/38970393808">WhatsApp</a>
-        </div>
-    </div>
+<div class="hero-left">
+<h1>PROFESSIONAL CLEANING</h1>
+
+<p>With Guaranteed Quality</p>
+
+<ul>
+<li>✔ Professional Team 24/7</li>
+<li>✔ Detailed & Precise</li>
+<li>✔ Quality Guarantee</li>
+</ul>
+
+<div class="hero-buttons">
+<a class="gold-btn" href="#contact">Get Offer</a>
+<a class="blue-btn" href="https://wa.me/38970393808">WhatsApp</a>
+</div>
+</div>
 </section>
 
-<section class="services">
-    <h2 class="section-title">Our Services</h2>
+<section id="services" class="services">
+<h2>OUR SERVICES</h2>
 
-    <div class="cards">
-        <div class="card"><h3>Homes</h3></div>
-        <div class="card"><h3>Buildings</h3></div>
-        <div class="card"><h3>Vehicles</h3></div>
-        <div class="card"><h3>Deep Cleaning</h3></div>
-    </div>
+<div class="service-grid">
+<div class="service-card">🏠 Homes</div>
+<div class="service-card">🏢 Buildings</div>
+<div class="service-card">🚗 Vehicles</div>
+<div class="service-card">🪟 Windows</div>
+<div class="service-card">🛋 Furniture</div>
+<div class="service-card">🧼 Deep Cleaning</div>
+</div>
 </section>
+
+<section id="contact" class="contact">
+<h2>ROYAL CLEAN GROUP</h2>
+<p>070 393 808</p>
+</section>
+
+<div class="whatsapp-float">
+<a href="https://wa.me/38970393808">WhatsApp</a>
+</div>
+
+<script>
+/* PART 3 */
+</script>
 
 </body>
 </html>
